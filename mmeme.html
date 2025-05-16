@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FILDIS</title>
+  <style>
+    :root {
+      --deep-purple: #5c3174;
+      --light-purple: #d4c0dd;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: var(--light-purple);
+    }
+
+    header {
+      background-color: var(--deep-purple);
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    .nav-links a.active {
+       color: rgb(41, 6, 44);
+       font-weight: bold;
+      text-decoration: underline;
+    }
+    .nav-links a:hover {
+      color: var(--light-purple);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero, .coming-soon {
+      background-color: var(--white);
+      padding: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .hero h1, .coming-soon h1 {
+      color: var(--deep-purple);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: var(--deep-purple);
+      margin-bottom: 1rem;
+    }
+    a:link {
+    color: rgb(49, 8, 59);
+    }
+
+    a:visited { 
+    color: rgba(236, 192, 249, 0.933);
+    }
+
+    footer {
+      background-color: var(--deep-purple);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .hero {
+        padding: 2rem;
+      }
+    }
+    .teacher-profile img {
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="logo">Fildis</span>
+      <div class="nav-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('modules')">Aralin</a>
+        <a onclick="showPage('groups')">Miyembro</a>
+        <a onclick="showPage('teachers')">Guro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="hero">
+      <h1>Filipino sa Iba't Ibang Disiplina</h1>
+      <p>Koleksyon ng mga aralin para sa kursong Filipino sa Iba't Ibang Disiplina</p>
+    </section>
+
+    <section id="home-features" class="features">
+      <div class="feature-card">
+        <h3>KAALAMAN</h3>
+        <p>Mahalagang kasangkapan sa pagtugon sa mga suliraning lokal at nasyonal, sa pamamagitan ng paggamit ng mapagkakatiwalaang sanggunian,
+          malikhaing paglalapat ng mga angkop na konsepto at teorya, at pagbibigay-solusyon na nagpapalakas sa kolektibong identidad tungo 
+          sa pambansang kaunlaran.</p>
+      </div>
+      <div class="feature-card">
+        <h3>KASANAYAN</h3>
+        <p>Maisapraktika at mapaunlad ang kasanayan sa pananaliksik gamit ang wikang Filipino sa pagbasa, pagsalin, pagsusuri, at malikhaing 
+          presentasyon ng impormasyon mula sa iba’t ibang larangan, tungo sa pagbibigay-solusyon sa suliranin at pagpapaunlad ng intelektwalisadong 
+          iskurso na nakaugat sa realidad ng lipunang Pilipino.</p>
+      </div>
+      <div class="feature-card">
+        <h3>KAHALAGAHAN</h3>
+        <p>Mapalalim ang pagpapahalaga sa sariling teorya at kulturang Pilipino sa pananaliksik na nakatuon sa pagbabagong panlipunan at pagtataguyod ng 
+          wikang Filipino bilang daluyan ng makabuluhan at mataas na diskursong akma sa konteksto ng bansa.</p>
+      </div>
+    </section>
+
+    <!-- Coming Soon Placeholder Pages -->
+    <section id="modules" class="coming-soon hidden">
+      <h1>Mga Aralin</h1>
+        <a href="https://drive.google.com/file/d/1KS5oOxf7R7HzbfMFFbIfc-FQUUwxdJVB/view"style="display: block; margin: 8px 0;">ARALIN SA PRELIM</a>
+        <a href="https://drive.google.com/file/d/1Apf6rg8KvMGNEGe-M-3Bwic49IhbOIky/view" style="display: block; margin: 8px 0;">ARALIN SA MIDTERM</a>
+        <a href="https://drive.google.com/file/d/1nFk10zuKjlSkP6rDPMMc90SkUmtMppYc/view" style="display: block; margin: 8px 0;">ARALIN LABING</a>
+        <a href="https://drive.google.com/file/d/1zLZ2g4QQAM-IMlcMB2V2vQfoM01yLQRs/view" style="display: block; margin: 8px 0;">ARALIN LABING APAT</a>
+        <a href="https://drive.google.com/file/d/1Wco_dSbyzNnwZQKv0JhqU-PNOaS8m4Z9/view" style="display: block; margin: 8px 0;">ARALIN LABING LIMA</a>
+        <a href="https://drive.google.com/file/d/1_Q4qFIqs_j4AO3GrTURmPd37MvzUw2bf/view" style="display: block; margin: 8px 0;">ARALIN LABING ANIM</a>
+        <a href="https://drive.google.com/file/d/1xcDkuNtxOMgP4SGhQNnH8QxATsoaj5Mh/view" style="display: block; margin: 8px 0;">ARALIN LABING PITO</a>
+      </div>
+    </section>
+
+    <section id="groups" class="coming-soon hidden">
+      <h1>Mga Miyembro</h1>
+      <p style="display: block; margin: 8px 0;"> BSIT-2223</p>
+      <p style="display: block; margin: 8px 0;"> REGALA, JOVEN</p>
+      <p style="display: block; margin: 8px 0;"> REONICO, CATHLYN</p>
+      <p style="display: block; margin: 8px 0;"> MAGLINTE, CHRISTIAN HANS</p>
+      <p style="display: block; margin: 8px 0;"> HALAYAHAY, DAENIELLE</p>
+      <p style="display: block; margin: 8px 0;"> ANDAYA, EDGAR ROY</p>
+      <p style="display: block; margin: 8px 0;"> DENOSO, JOHN ALBERT</p>
+    </section>
+
+    <section id="teachers" class="coming-soon hidden">
+  <h1>Guro sa Fildis</h1>
+  <div class="teacher-profile" style="text-align: center; margin-top: 20px;">
+    <img src="c:\Users\jhuna\Downloads\guro.jpg" alt="guro" />
+    <p>Binibini Leila Romar Bellen, LPT</p>
+  </div>
+</section>
+
+  </main>
+ 
+  <footer>
+    <p>&copy; 2025 Fildis.</p>
+  </footer>
+
+  <script>
+    function showPage(page) {
+  // Hide all content sections
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('home-features').classList.add('hidden');
+  document.getElementById('modules').classList.add('hidden');
+  document.getElementById('groups').classList.add('hidden');
+  document.getElementById('teachers').classList.add('hidden');
+
+  // Show the selected page
+  if (page === 'home') {
+    document.getElementById('home').classList.remove('hidden');
+    document.getElementById('home-features').classList.remove('hidden');
+  } else {
+    document.getElementById(page).classList.remove('hidden');
+  }
+
+  // Remove active class from all nav links
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => link.classList.remove('active'));
+
+  // Add active class to clicked link
+  const activeLink = document.querySelector(`.nav-links a[onclick*="${page}"]`);
+  if (activeLink) activeLink.classList.add('active');
+}
+
+    // Default to Home on load
+    showPage('home');
+  </script>
+</body>
+</html>
